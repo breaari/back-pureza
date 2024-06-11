@@ -1,5 +1,4 @@
 const { Usuario, Carrito } = require("../DB_conection");
-const carrito = require("../Models/carrito");
 
 const registerController = async (usuario, email, password, tipo) => {
   try {

@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const multer = require('multer');
 const path = require('path');
-const { loginAdminHandler } = require('../adminHandlers/LoginAdminHandler');
+const { loginAdminHandler } = require('../adminHandlers/loginAdminHandler');
 const { registerHandler } = require('../Handlers/registerHandler');
 const { getUsuariosHandler } = require('../adminHandlers/getUsuariosHandler');
 const { updateUsuariosHandler } = require('../adminHandlers/updateUsuariosHandler');

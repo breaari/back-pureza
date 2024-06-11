@@ -1,11 +1,11 @@
 require("dotenv").config();
 const { Sequelize } = require("sequelize");
-const CarritoModel = require("./Models/carrito");
+const CarritoModel = require("./Models/Carrito");
 const CategoriaModel = require("./Models/Categoria");
-const PedidoModel = require("./Models/pedido");
+const PedidoModel = require("./Models/Pedido");
 const ProductoModel = require("./Models/Producto");
-const UsuarioModel = require("./Models/usuario");
-const TipoModel = require("./Models/tipo");
+const UsuarioModel = require("./Models/Usuario");
+const TipoModel = require("./Models/Tipo");
 const SubcategoriaModel = require("./Models/Subcategoria");
 
 const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME } = process.env;

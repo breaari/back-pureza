@@ -1,4 +1,3 @@
-const usuario = require("../Models/usuario");
 const { getUsuariosController } = require("../adminControllers/getUsuariosController");
 
 const getUsuariosHandler = async (req, res) => {

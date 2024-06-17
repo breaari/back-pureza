@@ -47,11 +47,11 @@ module.exports = (sequelize) => {
     },
     imagen: {
       type: DataTypes.TEXT, 
-      allowNull: false
+      allowNull: true
     },
     categoriaId: {
       type: DataTypes.UUID,
-      allowNull: false,
+      allowNull: true,
     },
     subcategoriaId: {
       type: DataTypes.UUID,

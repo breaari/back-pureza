@@ -36,6 +36,8 @@ const { getByIdPedidoHandler } = require('../Handlers/Pedido/getByIdPedidoHandle
 const { deletePedidoHandler } = require('../Handlers/Pedido/deletePedidoHandler');
 const { updateEstadoPedidoHandler } = require('../Handlers/Pedido/updateEstadoPedidoHandler');
 const { createPreferenceHandler, feedbackHandler } = require('../Handlers/MercadoPago/mercadoPagoHandler');
+const { exportExcelHandler } = require('../Handlers/Excel/exportExcelHandler');
+const { importExcelHandler, upload2 } = require('../Handlers/Excel/importExcelHandler');
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -94,5 +96,9 @@ router.put('/pedido/:id', updateEstadoPedidoHandler );
 
 router.post('/create_preference', createPreferenceHandler);
 router.get('/feedback', feedbackHandler);
+
+router.get('/export-excel', exportExcelHandler)
+
+router.post('/import-excel', upload.single('file'), importExcelHandler);
 
 module.exports = router;

@@ -19,7 +19,7 @@ const registerController = async (usuario, email, password, tipo) => {
       });
     }
 
-    return { success: true, user: user, carrito: carrito };
+    return { success: true, user: user };
   } catch (error) {
     console.error("Error al crear usuario:", error);
     return { success: false, message: "Error al crear usuario. Por favor, inténtelo de nuevo más tarde" };

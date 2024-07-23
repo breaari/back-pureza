@@ -3,7 +3,6 @@ const { Pedido } = require("../../DB_conection");
 const updateEstadoPedidoController = async (data) => {
     const { pedidoId, nuevoEstado } = data;
     console.log('Recibido en el controlador:', data);
-    console.log('Desestructurado:', { pedidoId, nuevoEstado, id_pago });
 
     try {
         // Buscar el pedido por su ID
@@ -20,9 +19,9 @@ const updateEstadoPedidoController = async (data) => {
 
         // Crear el objeto de actualización
         const updateData = { estado: nuevoEstado };
-        if (id_pago) {
-            updateData.id_pago = id_pago;
-        }
+        // if (id_pago) {
+        //     updateData.id_pago = id_pago;
+        // }
 
         // Actualizar el estado del pedido (y id_pago si está presente)
         const [numberOfAffectedRows, affectedRows] = await Pedido.update(

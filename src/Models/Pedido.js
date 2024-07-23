@@ -3,9 +3,7 @@ const { DataTypes, UUID } = require("sequelize");
 module.exports = (sequelize) => {
   return sequelize.define("Pedido", {
     id: {
-      type: DataTypes.INTEGER,
-      defaultValue: "10",
-      autoIncrement: true,
+      type: DataTypes.UUID,
       allowNull: false,
       primaryKey: true,
     },

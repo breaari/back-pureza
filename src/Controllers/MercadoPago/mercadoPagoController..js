@@ -19,7 +19,6 @@ const createPreference = async (description, price, quantity) => {
 
     try {
         const response = await mercadopago.preferences.create(preference);
-        console.log("response:", response.body)
         return { success: true, init_point: response.body.init_point, id: response.body.id };
     } catch (error) {
         console.error(error);

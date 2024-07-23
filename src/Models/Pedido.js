@@ -4,7 +4,7 @@ module.exports = (sequelize) => {
   return sequelize.define("Pedido", {
     id: {
       type: DataTypes.UUID,
-      defaultValue: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV1,
       allowNull: false,
       primaryKey: true,
     },

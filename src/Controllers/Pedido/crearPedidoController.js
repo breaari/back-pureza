@@ -30,6 +30,8 @@
 const { Pedido } = require("../../DB_conection");
 
 const crearPedidoController = async (pedidoData) => {
+
+  console.log("pedidodata:", pedidoData)
     try {
         // Validar los datos del pedido
         if (!pedidoData || !pedidoData.pedido || !Array.isArray(pedidoData.pedido)) {

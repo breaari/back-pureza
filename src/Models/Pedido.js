@@ -29,7 +29,7 @@ module.exports = (sequelize) => {
 
     userId: {
       type: DataTypes.UUID,
-      allowNull: false, // ID del usuario que realiza el pedido
+      allowNull: true, // ID del usuario que realiza el pedido
     },
     total: {
       type: DataTypes.FLOAT,

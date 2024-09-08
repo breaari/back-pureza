@@ -13,7 +13,8 @@ const crearPedidoController = async (pedidoData) => {
       hora: horaActual, // Hora actual
       estado: pedidoData.estado,
       pedido: pedidoData.pedido, // Estructura del pedido [{ productId: "24001", cantidad: 2 }]
-      userId: pedidoData.userId, // ID del usuario que realiza el pedido
+      userId: pedidoData.userId,
+      telefono: pedidoData.telefono, // ID del usuario que realiza el pedido
       total: pedidoData.total
     });
 

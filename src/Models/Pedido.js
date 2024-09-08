@@ -31,6 +31,10 @@ module.exports = (sequelize) => {
       type: DataTypes.UUID,
       allowNull: true, // ID del usuario que realiza el pedido
     },
+    telefono: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     total: {
       type: DataTypes.FLOAT,
       allowNull: false,

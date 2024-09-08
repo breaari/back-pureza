@@ -33,7 +33,7 @@ module.exports = (sequelize) => {
     },
     telefono: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true
     },
     total: {
       type: DataTypes.FLOAT,

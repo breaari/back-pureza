@@ -7,6 +7,7 @@ const ProductoModel = require("./Models/Producto");
 const UsuarioModel = require("./Models/Usuario");
 const TipoModel = require("./Models/Tipo");
 const SubcategoriaModel = require("./Models/Subcategoria");
+const DescuentosModel = require('./Models/descuentos')
 
 const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME } = process.env;
 
@@ -23,7 +24,7 @@ const Subcategoria = SubcategoriaModel(sequelize);
 const Pedido = PedidoModel(sequelize);
 const Producto = ProductoModel(sequelize);
 const Usuario = UsuarioModel(sequelize);
-const Descuento = require('./models/descuento')(sequelize);
+const Descuento = require('./Models/descuentos')(sequelize);
 
 // Define las relaciones
 Usuario.hasOne(Tipo);

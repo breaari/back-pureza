@@ -38,6 +38,11 @@ const { updateEstadoPedidoHandler } = require('../Handlers/Pedido/updateEstadoPe
 const { createPreferenceHandler, feedbackHandler } = require('../Handlers/MercadoPago/mercadoPagoHandler');
 const { exportExcelHandler } = require('../Handlers/Excel/exportExcelHandler');
 const { importExcelHandler, upload2 } = require('../Handlers/Excel/importExcelHandler');
+const { getDescuentosHandler } = require('../adminHandlers/Descuentos/getDescuentosHandler');
+const { agregarDescuentoHandler } = require('../adminHandlers/Descuentos/agregarDescuentoHandler');
+const { updateDescuentoHandler } = require('../adminHandlers/Descuentos/updateDescuentosHandler');
+const { deleteDescuentoHandler } = require('../adminHandlers/Descuentos/deleteDescuentosHandler');
+const { getByIdDescuentoHandler } = require('../adminHandlers/Descuentos/getByIdDescuentosHandler');
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -93,6 +98,12 @@ router.get('/pedido', getPedidosHandler);
 router.get('/pedido/:id', getByIdPedidoHandler);
 router.delete('/pedido/:id', deletePedidoHandler)
 router.put('/pedido/:id', updateEstadoPedidoHandler );
+
+router.get('/descuentos', getDescuentosHandler);
+router.post('/descuentos', agregarDescuentoHandler);
+router.put('/descuentos/:id', updateDescuentoHandler);
+router.delete('/descuentos/:id', deleteDescuentoHandler);
+router.get('/descuentos/:id', getByIdDescuentoHandler);
 
 router.post('/create_preference', createPreferenceHandler);
 router.get('/feedback', feedbackHandler);

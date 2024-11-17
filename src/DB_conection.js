@@ -23,6 +23,7 @@ const Subcategoria = SubcategoriaModel(sequelize);
 const Pedido = PedidoModel(sequelize);
 const Producto = ProductoModel(sequelize);
 const Usuario = UsuarioModel(sequelize);
+const Descuento = require('./models/descuento')(sequelize);
 
 // Define las relaciones
 Usuario.hasOne(Tipo);
@@ -43,7 +44,6 @@ Pedido.belongsToMany(Usuario, {
 Usuario.hasOne(Carrito);
 
 Carrito.belongsTo(Usuario);
-
 
 Producto.belongsToMany(Categoria, {
   through: 'ProductoxCategoria',
@@ -98,5 +98,6 @@ module.exports = {
   Pedido,
   Producto,
   Usuario,
+  Descuento,
   conn: sequelize,
 };

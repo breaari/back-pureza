@@ -1,8 +1,7 @@
 const { Producto } = require("../../DB_conection");
 
 const updateProductosController = async ( id, updateData) => {
-    console.log("iddd:", id)
-    console.log("updatedata:", updateData)
+    
     try {
         // Buscar el producto por su ID
         const producto = await Producto.findByPk(id);

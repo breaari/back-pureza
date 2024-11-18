@@ -85,8 +85,8 @@ const exportExcelController = async () => {
       sheet.cell(rowIndex + 2, 6).value(producto.preciopromo);
 
       // Escribir los datos de Categoria y Subcategoria
-      const categoriaName = producto.Categoria ? producto.Categoria.name : 'No asignada';
-      const subcategoriaName = producto.Subcategoria ? producto.Subcategoria.name : 'No asignada';
+      const categoriaName = producto.Categoria ? producto.Categoria.nombre : 'No asignada';
+      const subcategoriaName = producto.Subcategoria ? producto.Subcategoria.nombre : 'No asignada';
 
       sheet.cell(rowIndex + 2, 7).value(categoriaName);
       sheet.cell(rowIndex + 2, 8).value(subcategoriaName);

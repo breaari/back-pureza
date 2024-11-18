@@ -89,13 +89,13 @@ const importExcelController = async (filePath) => {
         continue;
       }
 
-      // Obtener las categorías y subcategorías desde el archivo Excel
-      const categoriaId = row[headers.indexOf('CategoriaId')]; // Obtener ID de la categoría
-      const subcategoriaId = row[headers.indexOf('SubcategoriaId')]; // Obtener ID de la subcategoría
+      // Obtener las categorías y subcategorías desde el archivo Excel (por nombre)
+      const categoriaName = row[headers.indexOf('Categoria')]; // Obtener nombre de la categoría
+      const subcategoriaName = row[headers.indexOf('Subcategoria')]; // Obtener nombre de la subcategoría
 
-      // Obtener los datos de categoría y subcategoría desde la base de datos
-      const categoria = categoriaId ? await Categoria.findByPk(categoriaId) : null;
-      const subcategoria = subcategoriaId ? await Subcategoria.findByPk(subcategoriaId) : null;
+      // Buscar los IDs de categoría y subcategoría basados en el nombre
+      const categoria = categoriaName ? await Categoria.findOne({ where: { nombre: categoriaName } }) : null;
+      const subcategoria = subcategoriaName ? await Subcategoria.findOne({ where: { nombre: subcategoriaName } }) : null;
 
       // Si se encuentran categoría y subcategoría, asignarlas a productData
       if (categoria) {
@@ -125,5 +125,3 @@ const importExcelController = async (filePath) => {
 };
 
 module.exports = { importExcelController };
-
-

@@ -31,10 +31,6 @@ module.exports = (sequelize) => {
       type: DataTypes.DECIMAL(10, 2),
       allowNull: false
     },
-    ganancia: {
-      type: DataTypes.DECIMAL(10, 2),
-      allowNull: false
-    },
     preciopromo: {
       type: DataTypes.DECIMAL(10, 2),
       allowNull: true

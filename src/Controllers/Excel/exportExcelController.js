@@ -76,7 +76,9 @@ const exportExcelController = async () => {
     });
 
     // Escribir los datos de los productos
-    productos.forEach((producto, rowIndex) => {
+    for (let rowIndex = 0; rowIndex < productos.length; rowIndex++) {
+      const producto = productos[rowIndex];
+
       sheet.cell(rowIndex + 2, 1).value(producto.id);
       sheet.cell(rowIndex + 2, 2).value(producto.name);
       sheet.cell(rowIndex + 2, 3).value(producto.descripcion);
@@ -85,12 +87,19 @@ const exportExcelController = async () => {
       sheet.cell(rowIndex + 2, 6).value(producto.preciopromo);
 
       // Escribir los datos de Categoria y Subcategoria
-      const categoriaName = producto.Categoria ? producto.Categoria.nombre : 'No asignada'; // Corregido 'name' a 'nombre'
-      const subcategoriaName = producto.Subcategoria ? producto.Subcategoria.nombre : 'No asignada'; // Corregido 'name' a 'nombre'
+      const categoriaId = producto.categoriaId;
+      const subcategoriaId = producto.subcategoriaId;
+
+      // Buscar los nombres de Categoria y Subcategoria usando los ids
+      const categoria = await Categoria.findByPk(categoriaId); // Buscar por el ID
+      const subcategoria = await Subcategoria.findByPk(subcategoriaId); // Buscar por el ID
+
+      const categoriaName = categoria ? categoria.nombre : 'No asignada';
+      const subcategoriaName = subcategoria ? subcategoria.nombre : 'No asignada';
 
       sheet.cell(rowIndex + 2, 7).value(categoriaName);
       sheet.cell(rowIndex + 2, 8).value(subcategoriaName);
-    });
+    }
 
     // Convertir el libro de trabajo a un buffer
     const buffer = await workbook.outputAsync();

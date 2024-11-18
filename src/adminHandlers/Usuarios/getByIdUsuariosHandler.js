@@ -1,4 +1,4 @@
-const { getByIdUsuariosController } = require("../../adminControllers/Usuarios/getUsuariosController");
+const { getByIdUsuariosController } = require("../../adminControllers/Usuarios/getByIdUsuariosController");
 
 const getByIdUsuariosHandler = async (req, res) => {
   const { id } = req.params;

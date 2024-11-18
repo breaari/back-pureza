@@ -1,10 +1,11 @@
 const { agregarDescuentoController } = require("../../adminControllers/Descuentos/agregarDescuentosController");
 
 const agregarDescuentoHandler = async (req, res) => {
-  const { contenido, valor, porcentajeDeDescuento, envioGratis } = req.body;
+  const { contenido, montoMinimo, porcentajeDescuento, envioGratis } = req.body;  // Cambio de 'valor' a 'montoMinimo'
 
   try {
-    const result = await agregarDescuentoController({ contenido, valor, porcentajeDeDescuento, envioGratis });
+    const result = await agregarDescuentoController({ contenido, montoMinimo, porcentajeDescuento, envioGratis }); // Cambiado 'valor' a 'montoMinimo'
+    
     if (result.success) {
       res.status(201).json({ success: true, descuento: result.descuento });
     } else {

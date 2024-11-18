@@ -6,7 +6,7 @@ const deleteDescuentoHandler = async (req, res) => {
   try {
     const result = await deleteDescuentoController(id);
     if (result.success) {
-      res.status200.json({ success: true, message: result.message });
+      res.status(200).json({ success: true, message: result.message });
     } else {
       res.status(404).json({ success: false, message: result.message });
     }
@@ -17,3 +17,4 @@ const deleteDescuentoHandler = async (req, res) => {
 };
 
 module.exports = { deleteDescuentoHandler };
+

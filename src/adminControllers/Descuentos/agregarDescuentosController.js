@@ -1,9 +1,15 @@
 const { Descuento } = require("../../DB_conection");
 
-const agregarDescuentoController = async ({ contenido, valor, porcentajeDeDescuento, envioGratis }) => {
+const agregarDescuentoController = async ({ contenido, montoMinimo, porcentajeDescuento, envioGratis }) => {
   try {
-    // Crear el descuento
-    const nuevoDescuento = await Descuento.create({ contenido, valor, porcentajeDeDescuento, envioGratis });
+    // Crear el descuento en la base de datos
+    const nuevoDescuento = await Descuento.create({
+      contenido,
+      montoMinimo,          // Cambiado de 'valor' a 'montoMinimo'
+      porcentajeDeDescuento: porcentajeDescuento, // Usar el nombre correcto del campo
+      envioGratis
+    });
+
     return { success: true, descuento: nuevoDescuento };
   } catch (error) {
     console.error('Error al crear el descuento:', error);

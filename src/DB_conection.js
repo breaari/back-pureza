@@ -24,7 +24,7 @@ const Subcategoria = SubcategoriaModel(sequelize);
 const Pedido = PedidoModel(sequelize);
 const Producto = ProductoModel(sequelize);
 const Usuario = UsuarioModel(sequelize);
-const Descuento = require('./Models/descuentos')(sequelize);
+const Descuento = DescuentosModel(sequelize);
 
 // Define las relaciones
 Usuario.hasOne(Tipo);

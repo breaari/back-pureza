@@ -1,4 +1,4 @@
-const {Categoria} = require("../DB_conection");
+const {Categoria} = require("../../DB_conection");
 
 const agregarCategoriaController = async ({ nombre }) => {
   try {

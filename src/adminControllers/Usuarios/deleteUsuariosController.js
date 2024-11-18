@@ -1,4 +1,4 @@
-const { Usuario } = require("../DB_conection");
+const { Usuario } = require("../../DB_conection");
 
 const deleteUsuarioController = async (id) => {
   try {

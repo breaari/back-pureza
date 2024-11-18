@@ -1,4 +1,4 @@
-const { Usuario, Carrito } = require("../DB_conection");
+const { Usuario, Carrito } = require("../../DB_conection");
 
 const loginController = async (email, password) => {
   try {

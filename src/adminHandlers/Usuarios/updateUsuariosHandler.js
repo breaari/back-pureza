@@ -1,5 +1,5 @@
 const express = require('express');
-const { updateUsuarioController } = require('../adminControllers/updateUsuariosController')
+const { updateUsuarioController } = require('../../adminControllers/Usuarios/updateUsuariosController')
 
 const updateUsuariosHandler = async (req, res) => {
     const { id } = req.params;

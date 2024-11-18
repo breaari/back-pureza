@@ -1,4 +1,4 @@
-const { getUsuariosController } = require("../adminControllers/getUsuariosController");
+const { getUsuariosController } = require("../../adminControllers/Usuarios/getUsuariosController");
 
 const getUsuariosHandler = async (req, res) => {
   try {

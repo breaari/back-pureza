@@ -1,4 +1,4 @@
-const { agregarProductosController } = require('../adminControllers/agregarProductosController');
+const { agregarProductosController } = require('../../adminControllers/Productos/agregarProductosController');
 
 const agregarProductosHandler = async (req, res) => {
 

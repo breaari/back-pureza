@@ -1,5 +1,5 @@
 const express = require("express");
-const { loginAdminCotroller } = require("../adminControllers/loginAdminController");
+const { loginAdminCotroller } = require("../../adminControllers/Usuarios/loginAdminController");
 
  const loginAdminHandler = async (req, res) => {
   const { email, password } = req.body;

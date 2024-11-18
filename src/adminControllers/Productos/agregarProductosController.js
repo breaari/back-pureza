@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { Categoria, Producto, Subcategoria } = require("../DB_conection");
+const { Categoria, Producto, Subcategoria } = require("../../DB_conection");
 
 const agregarProductosController = async ({
   id,

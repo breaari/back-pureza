@@ -1,5 +1,5 @@
 const express = require("express");
-const { agregarCategoriaController } = require("../adminControllers/agregarCategoriaController");
+const { agregarCategoriaController } = require("../../adminControllers/Categorias/agregarCategoriaController");
 
 const agregarCategoriaHandler = async (req, res) => {
   const { nombre } = req.body;

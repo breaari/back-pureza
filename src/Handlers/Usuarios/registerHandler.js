@@ -1,5 +1,5 @@
 const express = require("express");
-const { registerController } = require("../Controllers/registerController");
+const { registerController } = require("../../Controllers/Usuario/registerController");
 
 const registerHandler = async (req, res) => {
   const { usuario, email, password, tipo } = req.body;

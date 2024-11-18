@@ -52,12 +52,12 @@ const exportExcelController = async () => {
         {
           model: Categoria,
           as: 'Categoria', // Asegúrate de que esté bien relacionado en el modelo
-          attributes: ['id', 'name'] // Incluye solo los campos necesarios
+          attributes: ['id', 'nombre'] // Corregido 'name' a 'nombre'
         },
         {
           model: Subcategoria,
           as: 'Subcategoria', // Asegúrate de que esté bien relacionado en el modelo
-          attributes: ['id', 'name'] // Incluye solo los campos necesarios
+          attributes: ['id', 'nombre'] // Corregido 'name' a 'nombre'
         }
       ]
     });
@@ -85,8 +85,8 @@ const exportExcelController = async () => {
       sheet.cell(rowIndex + 2, 6).value(producto.preciopromo);
 
       // Escribir los datos de Categoria y Subcategoria
-      const categoriaName = producto.Categoria ? producto.Categoria.nombre : 'No asignada';
-      const subcategoriaName = producto.Subcategoria ? producto.Subcategoria.nombre : 'No asignada';
+      const categoriaName = producto.Categoria ? producto.Categoria.nombre : 'No asignada'; // Corregido 'name' a 'nombre'
+      const subcategoriaName = producto.Subcategoria ? producto.Subcategoria.nombre : 'No asignada'; // Corregido 'name' a 'nombre'
 
       sheet.cell(rowIndex + 2, 7).value(categoriaName);
       sheet.cell(rowIndex + 2, 8).value(subcategoriaName);

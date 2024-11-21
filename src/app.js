@@ -17,7 +17,7 @@ server.use(cookieParser());
 server.use(morgan('dev'));
 
 server.use(cors({
-  origin:  ['http://localhost:5173', 'http://localhost:5174', 'https://backoffice.paravosdistribuidora.com.ar', 'https://paravosdistribuidora.com.ar'],
+  origin:  ['http://localhost:5173', 'http://localhost:5174', 'https://administrador.purezayencanto.com.ar', 'https://purezayencanto.com.ar'],
   credentials: true,
   methods: ['GET', 'POST', 'OPTIONS', 'PUT', 'DELETE'],
   allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept']
